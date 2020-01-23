@@ -66,12 +66,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# pure prompt
-
-fpath=( "$HOME/.zfunctions" $fpath )
-autoload -U promptinit; promptinit
-prompt pure
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -89,9 +83,6 @@ prompt pure
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -100,12 +91,15 @@ prompt pure
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH=~/.local/bin:$PATH
+fpath=( "$HOME/.zfunctions" $fpath )
+autoload -U promptinit; promptinit
+prompt pure
 
-export PATH=/home/lurodrigo/.local/bin/:$PATH
-
-export PATH="/home/lurodrigo/.pyenv/bin:$PATH"
 export TERMINAL=kitty
-export GRAALVM_HOME=/usr/lib/jvm/java-8-graal
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# alias juliac="julia ~/.julia/packages/PackageCompiler/oT98U/juliac.jl"
+alias emulator="~/Android/Sdk/tools/emulator"
+export GRAALVM_HOME="$HOME/.local/graalvm-ce-java11-19.3.0"
+# export PATH="$GRAALVM_HOME/bin:/snap/bin:$HOME/.emacs.d/bin:$PATH"
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#474957"

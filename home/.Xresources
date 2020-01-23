@@ -1,4 +1,4 @@
 Xft.dpi:                        109
 Powerline:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
 terminal.font:                  xft:Meslo LG S for Powerline:pixelsize=14
-
+rofi.font:          Jetbrains Mono Regular 12
