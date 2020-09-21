@@ -62,7 +62,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/secondary]
-monitor = ${env:MONITOR:HDMI1}
+monitor = ${env:MONITOR:HDMI-1}
 enable-ipc = true
 width = 100%
 height = 27
@@ -175,7 +175,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-prefix = " "
+format-prefix = "⛾ "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -183,7 +183,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 1
-format-prefix = " "
+format-prefix = "☰ "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -233,7 +233,7 @@ format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted = ⌀ muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -266,24 +266,22 @@ format-charging-underline = #a3be8c
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = #bf616a
 
-format-full-prefix = " "
+format-full-prefix = "⛽ "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = #3bb314
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = ⛃
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = ⛃
+animation-charging-1 = ⛃
+animation-charging-2 = ⛂
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = ⛁
+animation-discharging-1 = ⛀
+animation-discharging-2 = ⛀
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -306,7 +304,7 @@ type = custom/script
 format = "%{T3}<label>"
 format-padding = 2
 ; Previous song icon
-exec = echo ""
+exec = echo "⏮"
 ; Check if spotify is running before displaying the icon
 exec-if = "pgrep spotify"
 format-underline = #1db954
@@ -319,7 +317,7 @@ type = custom/script
 format = "%{T3}<label>"
 format-padding = 2
 ; Next song icon
-exec = echo ""
+exec = echo "⏭"
 ; Check if spotify is running before displaying the icon
 exec-if = "pgrep spotify"
 format-underline = #1db954
@@ -332,9 +330,9 @@ type = custom/ipc
 ; Default
 hook-0 = python3 ~/scripts/spotify/playpause.py
 ; Playing
-hook-1 = echo ""
+hook-1 = echo "⏸"
 ; Paused
-hook-2 = echo ""
+hook-2 = echo "⏵"
 initial = 1
 format-underline = #1db954
 format-padding = 2
